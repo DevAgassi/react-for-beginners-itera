@@ -1,15 +1,13 @@
 import React from 'react'
-import logo from './logo.svg'
-import './App.css'
-import User from './components/User'
+import "./App.css"
+import User from "./components/user/User";
+import Comments from "./components/comment/Comments";
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <User />
-      </header>
+        <Comments />
     </div>
   );
 }

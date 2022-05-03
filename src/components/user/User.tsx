@@ -4,12 +4,6 @@ interface UserInterface {
   contacts: string;
 }
 
-const style: React.CSSProperties = {
-  backgroundColor: 'white',
-  border: '1px solid red',
-  color: '#666',
-}
-
 const User: React.FC = () => {
   const user: UserInterface = ({
     name: 'Agasi',
@@ -18,8 +12,8 @@ const User: React.FC = () => {
   });
 
     return (
-      <div style={style}>
-        <h2>{user.name}</h2>
+      <div className="container mx-auto mt-8">
+        <h2 className="text-5xl leading-normal">{user.name}</h2>
         <ul>
           <li>
             Contact: {user.contacts}
@@ -31,5 +25,5 @@ const User: React.FC = () => {
       </div>
     );
   }
-  
+
   export default User;
