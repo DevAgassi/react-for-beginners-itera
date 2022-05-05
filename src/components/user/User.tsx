@@ -1,5 +1,7 @@
 import React, {useContext, useRef} from "react";
 import {ScrollContext} from "../scroll-observer";
+import LifeCircle from "../life-circle";
+
 
 interface UserInterface {
   name: string;
@@ -22,7 +24,7 @@ const User: React.FC = () => {
     progress = Math.min(1, scrollY / elContainer.clientHeight);
   }
   return (
-    <div ref={refContainer} className="container mx-auto mt-8 min-h-screen sticky top-0 -z-10"
+    <div ref={refContainer} className="container mx-auto mt-8 min-h-[100vh] sticky top-0"
          style={{transform: `translateY(-${progress * 20}vh`}}>
       <h2 className="text-5xl leading-normal">{user.name}</h2>
       <ul>
@@ -31,6 +33,9 @@ const User: React.FC = () => {
         </li>
         <li>
           About for me: {user.bio}
+        </li>
+        <li>
+          <LifeCircle />
         </li>
       </ul>
     </div>
