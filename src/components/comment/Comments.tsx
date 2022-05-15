@@ -9,7 +9,7 @@ const Comments: React.FC = () => {
     {id: 2, username: 'Alex', message: 'Hello everyone!!'},
   ]);
 
-  function handlePushComment(data: CommentList) {
+  function handlePushComment(data: Omit<CommentList, 'id'>) {
     setComments([...comments, Object.assign(data, {id: ++comments.length})]);
   }
 

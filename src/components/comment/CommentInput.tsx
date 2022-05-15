@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import CommentList from "type/CommentList";
 
 type Props = {
-    submitComment: (data: CommentList)=>void
+    submitComment: (data: Omit<CommentList, 'id'>)=>void
 }
 
 const CommentInput: React.FC<Props> = ({submitComment}:Props) => {
@@ -10,7 +10,7 @@ const CommentInput: React.FC<Props> = ({submitComment}:Props) => {
     const [message, setMessage] = useState<string>('');
 
     function handleSubmitComment():void {
-        (name !== '' && message !== '') && submitComment({id: 1, username: capitalizeFirstLetter(name), message: message});
+        (name !== '' && message !== '') && submitComment({username: capitalizeFirstLetter(name), message: message});
     }
     function capitalizeFirstLetter(name: string) {
         return name.charAt(0).toUpperCase() + name.slice(1);

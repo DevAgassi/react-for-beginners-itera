@@ -1,43 +1,162 @@
-.App {
-  text-align: center;
+body {
+    @apply text-black-300 text-sm;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app__header {
+    background-color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    min-height: 70px;
+    padding-bottom: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header__container {
+    @apply container flex w-full;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.header__wrapper {
+    @apply flex items-center justify-between w-full;
 }
 
-.App-link {
-  color: #61dafb;
+.header__brand {
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header__brand-img {
+    max-width: 128px;
+    max-height: 45px;
 }
 
-ul, ol {
-  list-style: none;
-  padding-left: 0;
+.header__nav {
+    @apply flex items-center;
+
+    margin-right: 11px;
+}
+
+.nav__link {
+    @apply mx-3;
+
+    margin: 0 12px;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.03125rem;
+    position: relative;
+}
+
+.nav__link.active::before {
+    width: 100%;
+}
+
+.nav__link::before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    height: 1.5px;
+    background-color: var(--second-color);
+    width: 0;
+    transition: width 400ms ease-in-out;
+}
+
+.nav__link:hover::before {
+    width: 100%;
+}
+
+.btn {
+    @apply bg-white text-primary text-base rounded-md hover:shadow-3xl transition-all duration-500;
+
+    padding: 9px 17px;
+}
+
+
+.app__hero {
+    @apply h-screen bg-cover bg-top;
+}
+
+.hero__container {
+    @apply flex flex-wrap flex-col place-content-center h-full;
+}
+
+.app__hero-brand {
+    @apply flex self-center;
+
+    margin-top: 10px;
+}
+
+.app__title {
+    @apply text-5xl text-center text-white mt-9;
+
+    line-height: 53px;
+    max-width: 1174px;
+}
+
+.hero__brand-location {
+    @apply text-center text-white uppercase text-base font-normal tracking-wide;
+
+    margin-top: 30px;
+    margin-bottom: 5px;
+}
+
+.hero__link-more {
+    @apply mt-9 self-center cursor-pointer transition-all duration-1000;
+
+    margin-top: 105px;
+}
+
+.hero__link-more svg line {
+    transition: transform 400ms ease-in-out;
+    cursor: pointer;
+}
+
+.hero__link-more svg:hover line {
+    transform: translateY(15px);
+}
+
+
+.book__info {
+    @apply bg-second;
+
+    display: grid;
+}
+
+.info__content {
+    @apply container;
+
+    height: 410px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.info__content-wrapper {
+    @apply columns-2 gap-10;
+
+    max-width: 760px;
+    gap: 2.5rem;
+    margin: 33px auto 0;
+}
+
+.btn__info {
+    @apply btn mt-10;
+
+    color: var(--white);
+}
+
+.presentation {
+    margin-top: 350px;
+}
+
+.presentation__content {
+    @apply my-36;
+}
+
+.presentation__title {
+    @apply text-8xl font-bold text-center;
+}
+
+.presentation__image img {
+    @apply w-full object-cover;
+    max-height: 600px;
 }
